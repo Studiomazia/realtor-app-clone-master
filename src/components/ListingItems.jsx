@@ -1,8 +1,9 @@
 import React from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import { MdLocationOn } from "react-icons/md";
-export default function ListingItems({ listing, id }) {
+import { MdLocationOn, MdEdit } from "react-icons/md";
+import { FcFullTrash } from "react-icons/fc";
+export default function ListingItems({ listing, id, onEdit, onDelete }) {
   console.log(listing);
   return (
     <li className="relative bg-white flex-col justify-between items-center shadow-md hover:shadow-lg rounded-md overflow-hidden transition duration-150 m-[10px] ">
@@ -52,6 +53,18 @@ export default function ListingItems({ listing, id }) {
           </div>
         </div>
       </Link>
+      {onDelete && (
+        <FcFullTrash
+          className="absolute bottom-2 right-2 h-4 cursor-pointer"
+          onClick={() => onDelete(listing.id)}
+        />
+      )}
+      {onEdit && (
+        <MdEdit
+          className="absolute bottom-2 right-7 h-4 cursor-pointer"
+          onClick={() => onEdit(listing.id)}
+        />
+      )}
     </li>
   );
 }
