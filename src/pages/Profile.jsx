@@ -78,7 +78,7 @@ export default function Profile() {
     fetchUserListings();
   }, [auth.currentUser.uid]);
   function onEdit(listingID) {
-    navigate(`/edit/listing/${listingID}`);
+    navigate(`/edit-listing/${listingID}`);
   }
   async function onDelete(listingID) {
     if (window.confirm("Are you sure to delete?")) {
