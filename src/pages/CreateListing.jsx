@@ -153,7 +153,7 @@ export default function CreateListing() {
       toast.error("Images not uploaded");
       return;
     });
-    console.log(imgUrls);
+    
     const formDataCopy = {
       ...formData,
       imgUrls,

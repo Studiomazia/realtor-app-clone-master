@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Header() {
-  const [pageState, setPageState] = useState("Sign In");
+  const [pageState, setPageState] = useState("Sign in");
   const location = useLocation();
   const navigate = useNavigate();
   const auth = getAuth();
@@ -12,13 +12,12 @@ export default function Header() {
       if (user) {
         setPageState("Profile");
       } else {
-        setPageState("Sign In");
+        setPageState("Sign in");
       }
     });
   }, [auth]);
   function pathMatchRoute(route) {
     if (route === location.pathname) {
-      // console.log(location.pathname);
       return true;
     }
   }

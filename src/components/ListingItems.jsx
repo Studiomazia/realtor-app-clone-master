@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MdLocationOn, MdEdit } from "react-icons/md";
 import { FcFullTrash } from "react-icons/fc";
 export default function ListingItems({ listing, id, onEdit, onDelete }) {
-  console.log(listing);
+  
   return (
     <li className="relative bg-white flex-col justify-between items-center shadow-md hover:shadow-lg rounded-md overflow-hidden transition duration-150 m-[10px] ">
       <Link to={`/category/${listing.type}/${id}`}>
